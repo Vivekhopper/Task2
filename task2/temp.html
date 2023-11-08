@@ -18,9 +18,10 @@
         align-items: center;
     }
     .box{
-        width: 250px;
+        width: 350px;
         height: 200px;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;        background-color: cyan;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;        
+        background-color: cyan;
     }
     .same{
         display: flex;
@@ -58,7 +59,17 @@
         border-radius: 10px;
         background-color: white;
         border: none;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;    }
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;   
+     }
+     button:hover{
+        background-color: red;
+        color: white;
+     }
+     input{
+        border: 1px solid black;
+        border-radius: 5px;
+     }
+        
 </style>
 <body>
     <div class="box">
@@ -70,7 +81,7 @@
                 <option value="Fahrenheit">Fahrenheit</option>
                 <option value="Kelvin">Kelvin</option>
             </select>
-            <input type="number" name="" id="input">
+            <input type="number"  id="input">
         </div>
         <div id="to" class="same">
             <label for="out">To:</label>
@@ -81,7 +92,9 @@
             </select>
             <div id="out"></div>
         </div>
-        <div id="btn">Calculate</div>
+        <div id="btn">
+        <button >Calculate</button>
+    </div>
     </div>
 </body>
 <script>
@@ -90,32 +103,33 @@
         let to=document.querySelector("#sec").value
         let input=document.querySelector("#input").value
         let output=document.querySelector("#out")
-        if(from==="Celsius" && to==="Celsius"){
+        
+        if(from=="Celsius" && to=="Celsius"){
             output.innerText=input
         }
-        else if(from==="Celsius" && to==="Fahrenheit"){
-            output.innerText=(input*1.8)+32
+        else if(from=="Celsius" && to=="Fahrenheit"){
+            output.innerHTML=(input*1.8)+32
         }
-        else if(from==="Celsius" && to==="Kelvin"){
-            output.innerText=input+273.15
+        else if(from=="Celsius" && to=="Kelvin"){
+            output.inneHTinnerHTMLt=input+273.15
         }
-        else if(from==="Fahrenheit" && to==="Celsius"){
-            output.innerText=(input-32)*5/9
+        else if(from=="Fahrenheit" && to=="Celsius"){
+            output.innerHTML=(input-32)*5/9
         }
-        else if(from==="Fahrenheit" && to==="Fahrenheit"){
-            output.innerText=input
+        else if(from=="Fahrenheit" && to=="Fahrenheit"){
+            output.inneHTinnerHTML=input
         }
-        else if(from==="Fahrenheit" && to==="Kelvin"){
-            output.innerText=(input-32)*(5/9)+273.15
+        else if(from=="Fahrenheit" && to=="Kelvin"){
+            output.innerHTML=(input-32)*(5/9)+273.15
         }
-        else if(from==="Kelvin" && to==="Celsius"){
-            output.innerText=input-273.15
+        else if(from=="Kelvin" && to=="Celsius"){
+            output.innerHTML=input-273.15
         }
-        else if(from==="Kelvin" && to==="Fahrenheit"){
-            output.innerText=(input-273.15)*(9/5)+32
+        else if(from=="Kelvin" && to=="Fahrenheit"){
+            output.innerHTML=(input-273.15)*(9/5)+32
         }
-        else if(from==="Kelvin" && to==="Kelvin"){
-            output.innerText=input
+        else if(from=="Kelvin" && to=="Kelvin"){
+            output.innerHTML=input
         }
     })
 </script>
